@@ -55,8 +55,9 @@ function nameFromPhone(phone: string): string {
 
 /** "Send" an OTP. In this mock, the code is always DEMO_OTP. */
 export async function requestOtp(phone: string): Promise<void> {
+  // A real backend would dispatch an SMS to `phone` here.
+  void phone
   await delay()
-  // A real backend would dispatch an SMS here.
 }
 
 /** Verify the OTP and mint a session. Throws on an incorrect code. */

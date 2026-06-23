@@ -1,4 +1,4 @@
-/** Types used across the insurance onboarding app. */
+/** Shared domain types for the insurance onboarding app. */
 
 /* ----------------------------- Partners ------------------------------ */
 

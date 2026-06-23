@@ -13,6 +13,7 @@ const inrCompact = new Intl.NumberFormat('en-IN', {
   maximumFractionDigits: 1,
 })
 
+/** ₹12,000 */
 export const formatCurrency = (amount: number): string => inr.format(amount)
 
 /** ₹1.5Cr / ₹50L — compact, for large cover amounts on cards. */

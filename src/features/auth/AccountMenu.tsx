@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useAuthStore } from './authStore'
-import { buttonStyles } from '@/components/ui/Button'
+import { useAuthStore, useIsAuthenticated } from './authStore'
+import { buttonStyles } from '@/components/ui/buttonStyles'
 import { useClickOutside } from '@/lib/hooks'
 
 /** Header account control: sign-in link when logged out, menu when logged in. */
@@ -12,8 +12,7 @@ export function AccountMenu() {
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const ref = useClickOutside<HTMLDivElement>(() => setOpen(false))
-
-  const authed = Boolean(session && session.refreshExpiresAt > Date.now())
+  const authed = useIsAuthenticated()
 
   if (!authed) {
     const returnTo = encodeURIComponent(location.pathname + location.search)

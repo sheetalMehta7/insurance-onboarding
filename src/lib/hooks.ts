@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-/** Detects click outside the element and calls handler */
+/** Calls `handler` on a pointer/focus event outside the returned ref element. */
 export function useClickOutside<T extends HTMLElement>(
   onOutside: () => void,
 ) {
@@ -19,7 +19,7 @@ export function useClickOutside<T extends HTMLElement>(
   return ref
 }
 
-/** Debounces */
+/** Debounces a changing value. Used by the plans search box. */
 export function useDebouncedValue<T>(value: T, delay = 300): T {
   const [debounced, setDebounced] = useState(value)
   useEffect(() => {

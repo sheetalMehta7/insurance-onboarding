@@ -1,6 +1,6 @@
 import { useThemeStore } from './themeStore'
 
-/** Switches between light and dark mode. */
+/** Light/dark switch. Persisted via the theme store. */
 export function ThemeToggle() {
   const theme = useThemeStore((s) => s.theme)
   const toggleTheme = useThemeStore((s) => s.toggleTheme)

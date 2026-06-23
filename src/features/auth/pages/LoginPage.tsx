@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { Field, TextInput } from '@/components/ui/form'
-import { useAuthStore } from '../authStore'
+import { useAuthStore, useIsAuthenticated } from '../authStore'
 import { requestOtp, verifyOtp, DEMO_OTP } from '../authService'
 import { phoneSchema, otpSchema } from '@/features/onboarding/schemas'
 import { toast } from '@/features/notifications/toast'
@@ -14,7 +14,7 @@ type Phase = 'phone' | 'otp'
 export default function LoginPage() {
   const [params] = useSearchParams()
   const navigate = useNavigate()
-  const session = useAuthStore((s) => s.session)
+  const authed = useIsAuthenticated()
   const login = useAuthStore((s) => s.login)
 
   const returnTo = params.get('returnTo')
@@ -27,7 +27,7 @@ export default function LoginPage() {
   const [busy, setBusy] = useState(false)
 
   // Already signed in → skip login and honour the intended destination.
-  if (session && session.refreshExpiresAt > Date.now()) {
+  if (authed) {
     return <Navigate to={safeReturnTo} replace />
   }
 

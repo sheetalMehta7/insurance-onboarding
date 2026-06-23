@@ -1,5 +1,6 @@
 import { cn } from '@/lib/cn'
 
+/** Shimmer placeholder used while data loads. */
 export function Skeleton({ className }: { className?: string }) {
   return (
     <div

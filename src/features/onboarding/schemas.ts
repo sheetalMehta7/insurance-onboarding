@@ -66,8 +66,8 @@ export const nomineeSchema = z.object({
     .min(1, 'Date of birth is required')
     .refine((v) => !Number.isNaN(new Date(v).getTime()), 'Invalid date')
     .refine((v) => new Date(v) < new Date(), 'Date cannot be in the future'),
-  sharePercent: z.coerce
-    .number()
+  sharePercent: z
+    .number({ message: 'Enter a share percentage' })
     .int('Use a whole number')
     .min(1, 'Share must be at least 1%')
     .max(100, 'Share cannot exceed 100%'),

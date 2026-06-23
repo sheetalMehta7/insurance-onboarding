@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import type { ReactNode } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
-import { useAuthStore } from './authStore'
+import { useAuthStore, useIsAuthenticated } from './authStore'
 
 /**
  * Gate for the purchase journey. Logged-out users are redirected to /login
@@ -14,10 +14,8 @@ import { useAuthStore } from './authStore'
  */
 export function ProtectedRoute({ children }: { children: ReactNode }) {
   const location = useLocation()
-  const session = useAuthStore((s) => s.session)
+  const authed = useIsAuthenticated()
   const ensureValidSession = useAuthStore((s) => s.ensureValidSession)
-
-  const authed = Boolean(session && session.refreshExpiresAt > Date.now())
 
   useEffect(() => {
     void ensureValidSession()

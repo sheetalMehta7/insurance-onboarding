@@ -4,7 +4,7 @@ import { storageKeys } from '@/lib/storage'
 export type Theme = 'light' | 'dark'
 
 /**
- * Returns the saved theme or falls back to the system theme.
+ * Gets the initial theme from storage or system settings.
  */
 function getInitialTheme(): Theme {
   try {

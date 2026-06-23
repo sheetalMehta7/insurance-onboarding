@@ -4,7 +4,7 @@ import { PartnerSwitcher } from '@/features/partners/PartnerSwitcher'
 import { ThemeToggle } from '@/features/theme/ThemeToggle'
 import { AccountMenu } from '@/features/auth/AccountMenu'
 
-/** Main app header. */
+/** App header: brand lockup (home link), partner switcher and theme toggle. */
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/80 backdrop-blur">

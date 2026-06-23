@@ -80,3 +80,10 @@ export const useAuthStore = create<AuthState>()(
     },
   ),
 )
+
+/**
+ * Reactive auth check for components. The `Date.now()` freshness comparison
+ * lives in the store method (not a component/hook body), keeping render pure.
+ */
+export const useIsAuthenticated = () =>
+  useAuthStore((s) => s.isAuthenticated())

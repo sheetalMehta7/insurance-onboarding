@@ -1,6 +1,6 @@
 import { QueryClient } from '@tanstack/react-query'
 
-/** Query client used across the app. */
+/** Shared query client. Conservative defaults for a mock-data catalog. */
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

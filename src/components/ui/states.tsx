@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { Button } from './Button'
 
-/** Reusable message component for empty and error states. */
+/** Generic centered message for empty / error / not-found states. */
 function StateBlock({
   icon,
   title,

@@ -1,6 +1,7 @@
 import type { HTMLAttributes } from 'react'
 import { cn } from '@/lib/cn'
 
+/** Surface container with consistent radius, border and padding. */
 export function Card({
   className,
   ...props

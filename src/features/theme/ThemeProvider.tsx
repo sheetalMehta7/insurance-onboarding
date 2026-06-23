@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import type { ReactNode } from 'react'
 import { useThemeStore } from './themeStore'
 
-/** Updates the dark class based on the current theme. */
+/** Keeps the <html> `dark` class in sync with the theme store. */
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const theme = useThemeStore((s) => s.theme)
 
