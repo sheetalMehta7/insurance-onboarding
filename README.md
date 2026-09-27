@@ -6,6 +6,9 @@ Users can browse plans, customize coverage, log in with OTP, complete KYC and pe
 
 The application supports partner-based branding and light/dark themes.
 
+## Link
+insurance-onboarding-multi-platform.netlify.app
+
 ## Quick Start
 
 ```bash
